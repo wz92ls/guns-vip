@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.stylefeng.guns.sys.modular.food.mapper.FoodMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="cn.stylefeng.guns.sys.modular.food.entity.Food">
+        <id column="ID" property="id" />
+        <result column="NUMBER" property="number" />
+        <result column="NAME" property="name" />
+        <result column="PRICE" property="price" />
+        <result column="PRODUCTDATE" property="productdate" />
+        <result column="EXPIRATIONDATE" property="expirationdate" />
+        <result column="STOCK" property="stock" />
+        <result column="UNIT" property="unit" />
+        <result column="STATUS" property="status" />
+        <result column="ADDTIME" property="addtime" />
+        <result column="UPDATETIME" property="updatetime" />
+        <result column="ADDPERSON" property="addperson" />
+        <result column="DESCRIPTION" property="description" />
+        <result column="REMARK" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        ID AS "id", NUMBER AS "number", NAME AS "name", PRICE AS "price", PRODUCTDATE AS "productdate", EXPIRATIONDATE AS "expirationdate", STOCK AS "stock", UNIT AS "unit", STATUS AS "status", ADDTIME AS "addtime", UPDATETIME AS "updatetime", ADDPERSON AS "addperson", DESCRIPTION AS "description", REMARK AS "remark"
+    </sql>
+
+
+    <select id="customList" resultType="cn.stylefeng.guns.sys.modular.food.model.result.FoodResult" parameterType="cn.stylefeng.guns.sys.modular.food.model.params.FoodParam">
+        select
+        <include refid="Base_Column_List"/>
+        from food where 1 = 1
+            <if test="paramCondition.number != null and paramCondition.number != ''">
+                and NUMBER like CONCAT('%',#{paramCondition.number},'%')
+            </if>
+            <if test="paramCondition.name != null and paramCondition.name != ''">
+                and NAME like CONCAT('%',#{paramCondition.name},'%')
+            </if>
+    </select>
+
+    <select id="customMapList" resultType="map" parameterType="cn.stylefeng.guns.sys.modular.food.model.params.FoodParam">
+        select
+        <include refid="Base_Column_List"/>
+        from food where 1 = 1
+            <if test="paramCondition.number != null and paramCondition.number != ''">
+                and NUMBER like CONCAT('%',#{paramCondition.number},'%')
+            </if>
+            <if test="paramCondition.name != null and paramCondition.name != ''">
+                and NAME like CONCAT('%',#{paramCondition.name},'%')
+            </if>
+    </select>
+
+    <select id="customPageList" resultType="cn.stylefeng.guns.sys.modular.food.model.result.FoodResult" parameterType="cn.stylefeng.guns.sys.modular.food.model.params.FoodParam">
+        select
+        <include refid="Base_Column_List"/>
+        from food where 1 = 1
+            <if test="paramCondition.number != null and paramCondition.number != ''">
+                and NUMBER like CONCAT('%',#{paramCondition.number},'%')
+            </if>
+            <if test="paramCondition.name != null and paramCondition.name != ''">
+                and NAME like CONCAT('%',#{paramCondition.name},'%')
+            </if>
+    </select>
+
+    <select id="customPageMapList" resultType="map" parameterType="cn.stylefeng.guns.sys.modular.food.model.params.FoodParam">
+        select
+        <include refid="Base_Column_List"/>
+        from food where 1 = 1
+            <if test="paramCondition.number != null and paramCondition.number != ''">
+                and NUMBER like CONCAT('%',#{paramCondition.number},'%')
+            </if>
+            <if test="paramCondition.name != null and paramCondition.name != ''">
+                and NAME like CONCAT('%',#{paramCondition.name},'%')
+            </if>
+    </select>
+
+</mapper>

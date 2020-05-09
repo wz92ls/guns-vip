@@ -1,0 +1,99 @@
+@layout("/common/_form.html",{js:["/assets/food/food/food_edit.js"]}){
+
+<form class="layui-form" id="foodForm" lay-filter="foodForm">
+    <div class="layui-fluid" style="padding-bottom: 75px;">
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-form-item layui-row">
+                    <input name="id" type="hidden"/>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">商品编号，UUID生成，唯一<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="number" name="number" placeholder="请输入商品编号，UUID生成，唯一" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">商品名称<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="name" name="name" placeholder="请输入商品名称" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">价格<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="price" name="price" placeholder="请输入价格" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">生产日期<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="productdate" name="productdate" placeholder="请输入生产日期" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">保质期  单位：天<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="expirationdate" name="expirationdate" placeholder="请输入保质期  单位：天" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">库存<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="stock" name="stock" placeholder="请输入库存" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">单位<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="unit" name="unit" placeholder="请输入单位" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">状态：1.上架  2.下架<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="status" name="status" placeholder="请输入状态：1.上架  2.下架" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">添加时间<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="addtime" name="addtime" placeholder="请输入添加时间" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">最后更新时间<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="updatetime" name="updatetime" placeholder="请输入最后更新时间" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">添加人<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="addperson" name="addperson" placeholder="请输入添加人" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">描述<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="description" name="description" placeholder="请输入描述" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                    <div class="layui-inline layui-col-md12">
+                        <label class="layui-form-label">备注<span style="color: red;">*</span></label>
+                        <div class="layui-input-block">
+                            <input id="remark" name="remark" placeholder="请输入备注" type="text" class="layui-input" lay-verify="required" required/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group-bottom text-center">
+        <button class="layui-btn" lay-filter="btnSubmit" lay-submit>&emsp;提交&emsp;</button>
+        <button type="reset" class="layui-btn layui-btn-primary" ew-event="closeDialog">&emsp;取消&emsp;</button>
+    </div>
+
+</form>
+
+@}
