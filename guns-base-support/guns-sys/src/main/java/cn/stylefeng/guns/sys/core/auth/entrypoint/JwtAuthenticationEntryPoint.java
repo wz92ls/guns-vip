@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Serializable;
 
+
 /**
  * 这个端点用在用户访问受保护资源但是不提供任何token的情况下
  *

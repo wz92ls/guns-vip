@@ -51,7 +51,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout().disable()
 
                 //禁用匿名用户
-                //.anonymous().disable()
+               // .anonymous().disable()
 
                 .exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 
@@ -78,6 +78,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 // 登录接口放开过滤
                 .antMatchers("/login").permitAll()
+
+                //.antMatchers("/hello").permitAll()//添加可匿名访问路径
 
                 // session登录失效之后的跳转
                 .antMatchers("/global/sessionError").permitAll()
