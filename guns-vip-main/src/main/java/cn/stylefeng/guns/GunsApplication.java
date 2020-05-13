@@ -34,9 +34,9 @@ public class GunsApplication {
     private final static Logger logger = LoggerFactory.getLogger(GunsApplication.class);
 
     public static void main(String[] args) throws Exception{
-        String uri = "https://hotel-api.betech-security.com/oauth2/access_token?appid=11&secret=11";
-        byte[] bytes = HttpsUtil.doGet(uri);
-        System.out.println(new String(bytes));
+//        String uri = "https://hotel-api.betech-security.com/oauth2/access_token?appid=11&secret=11";
+//        byte[] bytes = HttpsUtil.doGet(uri);
+//        System.out.println(new String(bytes));
 
         SpringApplication.run(GunsApplication.class, args);
         logger.info(GunsApplication.class.getSimpleName() + " is success!!!!!!!");
