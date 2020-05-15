@@ -39,7 +39,7 @@ public class GunsApplication {
 //        System.out.println(new String(bytes));
 
         SpringApplication.run(GunsApplication.class, args);
-        logger.info(GunsApplication.class.getSimpleName() + " is success!!!!!!!");
+        logger.info(GunsApplication.class.getSimpleName() + " is success!");
     }
 
 }
