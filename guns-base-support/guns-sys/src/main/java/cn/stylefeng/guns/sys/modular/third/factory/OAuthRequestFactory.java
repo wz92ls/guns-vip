@@ -42,8 +42,8 @@ public class OAuthRequestFactory {
                 break;
             case "github":
                 authRequest = new AuthGithubRequest(AuthConfig.builder()
-                        .clientId("")
-                        .clientSecret("")
+                        .clientId("41ebbba27c203ee7a7f5")
+                        .clientSecret("d2919f57b8594acd3a533d175acf45878e9ed528")
                         .redirectUri(BASE_URL + "/oauth/callback/github")
                         .build());
                 break;

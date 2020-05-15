@@ -14,7 +14,7 @@ import me.zhyd.oauth.model.AuthUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
+import lombok.extern.slf4j.Slf4j;
 import java.util.List;
 
 /**
@@ -24,6 +24,7 @@ import java.util.List;
  * @Date 2019/6/9 18:16
  */
 @Service
+@Slf4j
 public class DefaultLoginService implements LoginService {
 
     @Autowired
@@ -39,6 +40,9 @@ public class DefaultLoginService implements LoginService {
     @Transactional(rollbackFor = Exception.class)
     public String oauthLogin(AuthUser oauthUser) {
 
+        log.info("lujing------------------------------------------------->：" +oauthUser.getUsername());
+
+
         if (oauthUser == null) {
             throw new OAuthLoginException(OAuthExceptionEnum.OAUTH_RESPONSE_ERROR);
         }
@@ -46,8 +50,10 @@ public class DefaultLoginService implements LoginService {
         //当前无登录用户，创建用户或根据已有绑定用户的账号登录
         String account = getOauthUserAccount(oauthUser);
 
+        String ss=authService.login(account);
+        log.info("lujing------------------------------------------------->：" +ss);
         //执行原有系统登录逻辑
-        return authService.login(account);
+        return ss;//authService.login(account);
     }
 
 
